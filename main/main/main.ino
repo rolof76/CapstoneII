@@ -17,8 +17,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  Serial.println("noteOn");
   noteOn(1,48,127);
+  MidiUSB.flush();
   delay(1000);
+  Serial.println("noteOff");
   noteOff(1,48,0);
-  delay(0);
+  MidiUSB.flush();
+  delay(1000);
 }
